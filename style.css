@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -17,45 +17,180 @@ nav {
     padding: 10px;
     font-size: 12px;
 }
-nav.flexbox {
-    display: flex;
-    align-items: center;
-}
-ul {
-    display: flex;
-    align-items: center;
-}
-ul.rightnav {
-    display: flex;
-    justify-content: space-between;
-}
-#main {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-}
-img {
-    align-self: center;
-}
-#searchTerm {
-    border-radius: 50px;
-    width: 400px;
-    height: 40px;
-    margin: 50px -50px;
-}
-#searchTerm:hover {
-    box-shadow: black 2px;
-}
-ul {
-    list-style-type: none;
-    display: flex;
-    align-items: baseline;
+#navbar {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr 50px 50px 50px 50px;
+    grid-template-rows: 50px;
+    grid-template-areas: 
+    "about store . gmail images menu signin";
+    margin: 0 20px 0 10px;
 }
 
-ul:hover {
+a:hover {
     text-decoration: underline;
 }
+/* #about:hover, #store:hover, #gmail:hover, #images:hover, #signin:hover {
+    text-decoration: underline;
+} */
+
+#about {
+    grid-area: about;
+    justify-self: center;
+    align-self: center;
+}
+#store {
+    grid-area: store;
+    justify-self: center;
+    align-self: center;
+}
+#gmail {
+    grid-area: gmail;
+    justify-self: center;
+    align-self: center;
+}
+#images {
+    grid-area: images;
+    justify-self: center;
+    align-self: center;
+}
+#menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+    margin-right: 20px;
+}
+#signin {
+    grid-area: signin;
+    justify-self: center;
+    align-self: center;
+    background-color: #4683ea;
+    color: white;
+    height: 30px;
+    width: 65px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border: 1px solid #4285f4;
+}
+
+#main {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 250 250px 250px 250px;
+    grid-template-areas: 
+    ". ."
+    "logo"
+    "searchTerm"
+    "buttons";
+}
+img #logo {
+    align-self: center;
+    grid-area: logo;
+    justify-content: center;
+    
+}
+
+#searchTerm {
+    grid-area: searchTerm;
+    border-radius: 30px;
+    border: 1px solid rgba(88, 77, 77, 0.1);
+    width: 500px;
+    height: 45px;
+    justify-self: center;
+    background-color: transparent;
+    align-self: center;
+    justify-content: center;
+}
+#searchTerm:hover {
+    box-shadow: 1px 1px 5px grey;
+}
+#searchTerm:focus {
+    box-shadow: 1px 1px 5px grey;
+}
+#google-search, #random-search {
+    border: none;
+    font-size: 16px;
+    margin-left: 20px;
+    grid-area: buttons;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 15px 7px 15px;
+    margin: 30px 10px 30px 20px;
+    border-radius: 7px;
+    color: #5F6368;
+    background-color: #f5f5f5;
+}
+#google-search:hover {
+    border: 1px solid rgba(0, 0, 0, 0.226);
+}
+#random-search:hover {
+    border: 1px solid rgba(0, 0, 0, 0.226);
+}
+/* #flexbox {
+    display: flexbox;
+    grid-area: flexbox;
+    justify-self: center;
+    align-self: center;
+} */
+
 a {
     text-decoration: none;
     color: #000000;
 }
+#footer {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    display: grid;
+    background: #f2f2f2;
+    line-height: 40px;
+    min-width: 980px;
+    border-top: 1px solid #e4e4e4;
+    color: #222;
+    grid-template-columns: 130px 70px 150px 1330px 70px 70px 70px;
+    grid-template-rows: 50px;
+    grid-template-areas: 
+    "advertising business hsw . privacy terms settings";
+    margin: 0px 10px 5px 0px;
+}
+#advertising {
+    grid-area: advertising;
+    justify-self: center;
+    align-self: center;
+}
+#business {
+    grid-area: business;
+    justify-self: center;
+    align-self: center;
+}
+#hsw {
+    grid-area: hsw;
+    justify-self: center;
+    align-self: center;
+}
+#privacy {
+    grid-area: privacy;
+    justify-self: center;
+    align-self: center;
+}
+#terms {
+    grid-area: terms;
+    justify-self: center;
+    align-self: center;
+}
+#settings {
+    grid-area: settings;
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+
+
+/* #advertising:hover, #business:hover, #hsw:hover, #privacy:hover, #terms:hover, #settings:hover {
+    text-decoration: underline;
+} */
